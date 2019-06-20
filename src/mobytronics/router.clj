@@ -15,10 +15,6 @@
                                   :description "https://cljdoc.org/d/metosin/reitit"}}}
              ["/swagger.json"
               {:get (swagger/create-swagger-handler)}]
-             ["/ping"
-              {:get (fn [_]
-                      {:status 200
-                       :body "pong"})}]
              ["/passengers" {:swagger {:tags ["passengers"]}
                              :get {:summary "get all passengers data"
                                    :handler hd/passengers-handler}}]
