@@ -1,44 +1,145 @@
-# mobytronics
+# Car pooling Proxy API
 
-FIXME: description
+A web service to get structured data from Icelandic car pooling API.
 
-## Installation
+## Introduction
 
-Download from http://example.com/FIXME.
+This service provide a JSON API that extend Icelandic car pooling API. It have been written in Clojure.
+
+## Requirements
+
+You need to install clojure and leiningen. You can install clojure and leiningen using brew.
+
+You are under Macos X, this what you need:
+
+```
+$ brew cask install java
+```
+
+```
+$ brew install leiningen
+```
+
+```
+$ brew install clojure
+```
+
+You are using a linux box, install Clojure on your box as this:
+
+```
+$ sudo apt-get install rlwrap
+$ curl -O https://download.clojure.org/install/linux-install-1.10.0.403.sh
+$ chmod +x linux-install-1.9.0.397.sh
+$ sudo ./linux-install-1.9.0.397.sh
+```
+
+Install Leiningen manually:
+
+```
+mkdir ~/bin
+curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein && chmod a+x ~/bin/lein
+```
+Add your bin directory to your PATH: `export PATH=$PATH:~/bin`.
+
+And check out the lein's latest version:
+
+```
+$ lein upgrade
+```
+
+That's it !
+
+
+## Run this project
+
+You can run now this project as this:
+
+```
+$ lein run
+```
+
+And your server start at port 3000 and is available at `http://localhost:3000`.
+
+## Swagger UI
+
+You can access Swagger api doc visiting this page here: `http://localhost:3000`.
 
 ## Usage
 
-FIXME: explanation
+How to use this service.
 
-    $ java -jar mobytronics-0.1.0-standalone.jar [args]
+A list of endpoints:
 
-## Options
+**List of Passengers**
+_A list of passengers and their rides data info._
 
-FIXME: listing of options this app accepts.
+You can use this endpoint:
 
-## Examples
 
-...
+```
+curl -X GET http://localhost:3000/passengers
+```
 
-### Bugs
+**Response**
+Return a Json:
 
-...
+```
+{"body": "ok"}
+```
 
-### Any Other Sections
-### That You Think
-### Might be Useful
 
-## License
+**List of Drivers**
+_A list of nearest Drivers_
 
-Copyright © 2019 FIXME
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+**Response**
+Return a Json:
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+```
+curl -X GET http://localhost:3000/drivers
+```
+
+Return a Json:
+
+```
+{"body": "ok"}
+```
+
+### Testing
+
+Run project's tests using this command:
+
+```
+$ lein test
+```
+
+This project implement `lein-test-refresh` plugin, if you want to use
+it, i recommend this command:
+
+```
+$ lein test-refresh
+```
+
+## Release
+
+To release a build use this command:
+
+```
+$ lein uberjar
+```
+
+And execute your jar file with this command:
+
+```
+$ java -jar mobytronics-0.1.0-SNAPSHOT-standalone.jar
+```
+
+## Author
+
+Dan Loaiza (papachan @ gmail.com).
+
+## Licence
+
+Copyright © 2019 Dan Loaiza <papachan@gmail.com>
+
+Distributed under the Eclipse Public License, the same as Clojure uses.

@@ -1,23 +1,26 @@
+(System/setProperty "org.eclipse.jetty.util.log.announce" "false" )
 (ns mobytronics.core
-  (:require [reitit.ring :as ring]
-            [ring.adapter.jetty :as jetty]))
+  (:require [ring.adapter.jetty :as jetty]
+            [ring.middleware.reload :refer [wrap-reload]]
+            [mobytronics.router :as rs]))
 
-;; Routing
-(def router [["/ping"
-              {:get (fn [_]
-                      {:status 200
-                       :body "pong"})}]])
 
-;; App handler
-(def app
-  (ring/ring-handler
-   (ring/router
-    router)
-   (ring/create-default-handler)))
-
+(defn start
+  [fn]
+  (do
+      (jetty/run-jetty fn {:port 3000})
+      (println "server running in port 3000")))
 
 (defn -main
   [& args]
-  (do
-      (jetty/run-jetty #'app {:port 3000})
-      (println "server running in port 3000")))
+  (start #'rs/app))
+
+(defn -dev-main
+  [& args]
+  (start (wrap-reload #'rs/app)))
+
+
+(comment
+  (start #'rs/app)
+
+)
