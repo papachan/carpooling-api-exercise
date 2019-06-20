@@ -73,7 +73,9 @@ A list of endpoints:
 **List of Passengers**
 _A list of passengers and their rides data info._
 
-Access this endpoint at:
+Method:
+
+`GET`
 
 ```
 curl -X GET http://localhost:3000/passengers
@@ -83,12 +85,16 @@ curl -X GET http://localhost:3000/passengers
 Return a Json response:
 
 ```
-{"results": [{"...data..."}]}
+{"response": [{"...data..."}]}
 ```
 
 
 **List of Drivers**
 _A list of nearest Drivers with their rides_
+
+Method:
+
+`GET`
 
 
 **Response**
@@ -100,7 +106,7 @@ curl -X GET http://localhost:3000/drivers
 Return a Json Response:
 
 ```
-{"results": [{"...data..."}]}
+{"response": [{"...data..."}]}
 ```
 
 ### Testing

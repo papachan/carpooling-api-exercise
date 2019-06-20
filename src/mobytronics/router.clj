@@ -16,10 +16,10 @@
              ["/swagger.json"
               {:get (swagger/create-swagger-handler)}]
              ["/passengers" {:swagger {:tags ["passengers"]}
-                             :get {:summary "get all passengers data"
+                             :get {:summary "get passengers data (response json)"
                                    :handler hd/passengers-handler}}]
              ["/drivers" {:swagger {:tags ["drivers"]}
-                          :get {:summary "get all drivers data"
+                          :get {:summary "get drivers data (response json)"
                                 :handler hd/drivers-handler}}]])
 
 ;; App handler
