@@ -13,12 +13,7 @@
                  [metosin/muuntaja "0.6.4"]
 
                  [clj-http "3.10.0"]
-
-                 ;; [org.clojure/data.json "0.2.6"]
-                 ;; [cheshire "5.8.1"]
-
-                 [enlive "1.1.6"]
-                 ]
+                 [enlive "1.1.6"]]
   :target-path "target/%s"
   :repl-options {:init-ns mobytronics.core}
   :main ^:skip-aot mobytronics.core

@@ -20,7 +20,7 @@
       (concat m (parse-html-content (lookup-page link))))))
 
 (defn get-all-links
-  "get all additional data in a vector"
+  "get all data into a hash-map"
   [type]
   (let [response (get-results-from-url type)]
     (map parse-link-data response)))

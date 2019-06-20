@@ -58,11 +58,11 @@ You can run now this project as this:
 $ lein run
 ```
 
-And your server start at port 3000 and is available at `http://localhost:3000`.
+And your server run at port 3000.
 
 ## Swagger UI
 
-You can access Swagger api doc visiting this page here: `http://localhost:3000`.
+You can access Swagger api doc visiting this page here: ()[http://localhost:3000].
 
 ## Usage
 
@@ -73,36 +73,34 @@ A list of endpoints:
 **List of Passengers**
 _A list of passengers and their rides data info._
 
-You can use this endpoint:
-
+Access this endpoint at:
 
 ```
 curl -X GET http://localhost:3000/passengers
 ```
 
 **Response**
-Return a Json:
+Return a Json response:
 
 ```
-{"body": "ok"}
+{"results": [{"...data..."}]}
 ```
 
 
 **List of Drivers**
-_A list of nearest Drivers_
+_A list of nearest Drivers with their rides_
 
 
 **Response**
-Return a Json:
 
 ```
 curl -X GET http://localhost:3000/drivers
 ```
 
-Return a Json:
+Return a Json Response:
 
 ```
-{"body": "ok"}
+{"results": [{"...data..."}]}
 ```
 
 ### Testing
