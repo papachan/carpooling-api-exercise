@@ -13,7 +13,9 @@
                  [metosin/muuntaja "0.6.4"]
 
                  [clj-http "3.10.0"]
-                 [enlive "1.1.6"]]
+                 [enlive "1.1.6"]
+
+                 [cheshire "5.8.1"]]
   :target-path "target/%s"
   :repl-options {:init-ns mobytronics.core}
   :main ^:skip-aot mobytronics.core
