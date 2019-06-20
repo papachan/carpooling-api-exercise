@@ -44,7 +44,7 @@ Add your bin directory to your PATH: `export PATH=$PATH:~/bin`.
 And check out the lein's latest version:
 
 ```
-lein upgrade
+$ lein upgrade
 ```
 
 That's it !
@@ -68,31 +68,70 @@ You can access Swagger api doc visiting this page here: `http://localhost:3000`.
 
 How to use this service.
 
-#### List of Passengers
+A list of endpoints:
 
-A list of passengers
+**List of Passengers**
+_A list of passengers and their rides data info._
 
-`http://localhost:3000/passengers`
-
-
-### List of Drivers
-
-A list of Drivers near.
-
-`http://localhost:3000/drivers`
+You can use this endpoint:
 
 
-### Tests
+```
+curl -X GET http://localhost:3000/passengers
+```
+
+**Response**
+Return a Json:
+
+```
+{"body": "ok"}
+```
+
+
+**List of Drivers**
+_A list of nearest Drivers_
+
+
+**Response**
+Return a Json:
+
+```
+curl -X GET http://localhost:3000/drivers
+```
+
+Return a Json:
+
+```
+{"body": "ok"}
+```
+
+### Testing
 
 Run project's tests using this command:
 
 ```
-lein test
+$ lein test
 ```
-This project implement `lein-test-refresh` plugin:
+
+This project implement `lein-test-refresh` plugin, if you want to use
+it, i recommend this command:
 
 ```
-lein test-refresh
+$ lein test-refresh
+```
+
+## Release
+
+To release a build use this command:
+
+```
+$ lein uberjar
+```
+
+And execute your jar file with this command:
+
+```
+$ java -jar mobytronics-0.1.0-SNAPSHOT-standalone.jar
 ```
 
 ## Author
