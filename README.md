@@ -82,6 +82,8 @@ curl -X GET http://localhost:3000/passengers
 ```
 
 **Response**
+
+
 Return a Json response:
 
 ```
@@ -97,11 +99,12 @@ Method:
 `GET`
 
 
-**Response**
-
 ```
 curl -X GET http://localhost:3000/drivers
 ```
+
+**Response**
+
 
 Return a Json Response:
 
