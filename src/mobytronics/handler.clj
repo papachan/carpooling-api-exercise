@@ -17,7 +17,8 @@
 (def parse-link-data
   (fn [m]
     (if-let [link (get m :link)]
-      (concat m (parse-html-content (lookup-page link))))))
+      (into {}
+            (concat m (parse-html-content (lookup-page link)))))))
 
 (defn get-all-links
   "get all data into a hash-map"
