@@ -5,8 +5,8 @@
             [reitit.swagger :as swagger]
             [reitit.swagger-ui :as swagger-ui]
             [reitit.ring.middleware.muuntaja :as muuntaja]
-            [muuntaja.core :as m]
-            [mobytronics.handler :as hd]))
+            [muuntaja.core :as m])
+  (:use [mobytronics.handler :only [handler]]))
 
 
 ;; Routing
@@ -17,9 +17,11 @@
                       :handler (swagger/create-swagger-handler)}}]
 
               ["/passengers" {:get {:summary "get passengers data (response json)"
-                                    :handler hd/passengers-handler}}]
+                                    :handler (fn [_]
+                                               (handler "passengers"))}}]
               ["/drivers" {:get {:summary "get drivers data (response json)"
-                                 :handler hd/drivers-handler}}]])
+                                 :handler (fn [_]
+                                            (handler "drivers"))}}]])
 
 ;; App handler
 (def app

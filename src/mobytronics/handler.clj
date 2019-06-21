@@ -26,10 +26,6 @@
   (let [response (get-results-from-url type)]
     (map parse-link-data response)))
 
-(defn passengers-handler [_]
-  (let [body-str (get-all-links "passengers")]
-    {:status 200, :body {:response body-str}}))
-
-(defn drivers-handler [_]
-  (let [body-str (get-all-links "drivers")]
+(defn handler [type]
+  (let [body-str (get-all-links type)]
     {:status 200, :body {:response body-str}}))
