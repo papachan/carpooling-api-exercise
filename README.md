@@ -62,7 +62,7 @@ And your server run at port 3000.
 
 ## Swagger UI
 
-You can access Swagger api doc visiting this page here: ()[http://localhost:3000].
+You can access Swagger api doc visiting this page here: http://localhost:3000/index.html.
 
 ## Usage
 

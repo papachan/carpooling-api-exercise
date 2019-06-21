@@ -10,17 +10,16 @@
 
 
 ;; Routing
-(def router ["" {:no-doc true
-                 :swagger {:info {:title "car-api"
-                                  :description "https://cljdoc.org/d/metosin/reitit"}}}
-             ["/swagger.json"
-              {:get (swagger/create-swagger-handler)}]
-             ["/passengers" {:swagger {:tags ["passengers"]}
-                             :get {:summary "get passengers data (response json)"
-                                   :handler hd/passengers-handler}}]
-             ["/drivers" {:swagger {:tags ["drivers"]}
-                          :get {:summary "get drivers data (response json)"
-                                :handler hd/drivers-handler}}]])
+(def router [["/swagger.json"
+               {:get {:no-doc true
+                      :swagger {:info {:title "car-api"
+                                       :description "https://cljdoc.org/d/metosin/reitit"}}
+                      :handler (swagger/create-swagger-handler)}}]
+
+              ["/passengers" {:get {:summary "get passengers data (response json)"
+                                    :handler hd/passengers-handler}}]
+              ["/drivers" {:get {:summary "get drivers data (response json)"
+                                 :handler hd/drivers-handler}}]])
 
 ;; App handler
 (def app
