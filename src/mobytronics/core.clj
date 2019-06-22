@@ -1,4 +1,3 @@
-(System/setProperty "org.eclipse.jetty.util.log.announce" "false" )
 (ns mobytronics.core
   (:require [ring.adapter.jetty :as jetty]
             [ring.middleware.reload :refer [wrap-reload]]
