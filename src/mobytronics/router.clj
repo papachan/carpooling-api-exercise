@@ -5,8 +5,8 @@
             [reitit.swagger :as swagger]
             [reitit.swagger-ui :as swagger-ui]
             [reitit.ring.middleware.muuntaja :as muuntaja]
-            [muuntaja.core :as m])
-  (:use [mobytronics.handler :only [handler]]))
+            [muuntaja.core :as m]
+            [mobytronics.handler :refer :all]))
 
 
 ;; Routing

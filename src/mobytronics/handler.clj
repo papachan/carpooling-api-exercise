@@ -3,9 +3,9 @@
             [schema.core :as s]
             [reitit.coercion :as coercion]
             [reitit.coercion.schema]
-            [clj-http.client :as client])
-  (:use [mobytronics.constants]
-        [mobytronics.scrapper]))
+            [clj-http.client :as client]
+            [mobytronics.constants :refer :all]
+            [mobytronics.scrapper :refer :all]))
 
 (defn get-results-from-url
   [type]
